@@ -261,7 +261,7 @@ canvas{display:block}
           <button class="tool-btn" data-tool="crop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2v4H2m20 12h-4v4"/><rect x="6" y="6" width="12" height="12"/></svg>크롭</button>
         </div>
       </div>
-      <div class="panel" id="dPanelMagic"><div class="panel-title">매직 완드</div><div class="slider-row"><span class="slider-label">허용 범위</span><span class="slider-value" id="dTolVal">32</span></div><input type="range" id="dTolerance" min="0" max="255" value="32"><div style="height:8px"></div><label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim)"><input type="checkbox" id="dContiguous" checked style="accent-color:var(--accent)">인접 영역만</label></div>
+      <div class="panel" id="dPanelMagic"><div class="panel-title">매직 완드</div><div class="slider-row"><span class="slider-label">허용 범위</span><span class="slider-value" id="dTolVal">32</span></div><input type="range" id="dTolerance" min="0" max="255" value="32"><div style="height:8px"></div><label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim)"><input type="checkbox" id="dContiguous" checked style="accent-color:var(--accent)">인접 영역만</label><div style="height:10px"></div><div class="panel-title" style="margin-bottom:8px">선택 보정</div><div class="slider-row"><span class="slider-label">선택 확장</span><span class="slider-value" id="dGrowVal">2</span><span class="slider-label">px</span></div><input type="range" id="dGrowPx" min="0" max="20" value="2"><div style="height:6px"></div><button class="btn" id="dGrow" style="width:100%;margin-bottom:4px">🔍 선택 확장 (Grow)</button><button class="btn" id="dFillHoles" style="width:100%;margin-bottom:4px">🕳️ 구멍 채우기 (Fill Holes)</button><div style="height:10px"></div><div class="panel-title" style="margin-bottom:8px">크로마키</div><div class="slider-row"><span class="slider-label">크로마키 허용 범위</span><span class="slider-value" id="dChromaVal">60</span></div><input type="range" id="dChromaTol" min="10" max="200" value="60"><div style="height:6px"></div><button class="btn" id="dChroma" style="width:100%;background:rgba(0,177,64,.15);border-color:rgba(0,177,64,.4);color:#00e540">🟢 크로마키 배경 선택</button></div>
       <div class="panel" id="dPanelBrush" style="display:none"><div class="panel-title">브러시</div><div class="slider-row"><span class="slider-label">크기</span><span class="slider-value" id="dBrushVal">30</span></div><input type="range" id="dBrushSize" min="2" max="200" value="30"><div style="height:8px"></div><div class="slider-row"><span class="slider-label">부드러움</span><span class="slider-value" id="dSoftVal">0</span></div><input type="range" id="dBrushSoft" min="0" max="100" value="0"></div>
       <div class="panel" id="dPanelEraser" style="display:none"><div class="panel-title">지우개</div><div class="slider-row"><span class="slider-label">크기</span><span class="slider-value" id="dEraserVal">30</span></div><input type="range" id="dEraserSize" min="2" max="200" value="30"></div>
       <div class="panel" id="dPanelLasso" style="display:none"><div class="panel-title">올가미</div><p style="font-size:12px;color:var(--text-dim)">클릭→점 찍기, 더블클릭→완료</p></div>
@@ -295,7 +295,7 @@ canvas{display:block}
   </div>
 
   <div class="settings-panel" id="settingsPanel">
-    <div id="sPanelMagic"><div class="panel-title">매직 완드</div><div class="slider-row"><span class="slider-label">허용 범위</span><span class="slider-value" id="sTolVal">32</span></div><input type="range" id="sTolerance" min="0" max="255" value="32"><div style="height:8px"></div><label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim)"><input type="checkbox" id="sContiguous" checked style="accent-color:var(--accent)">인접 영역만</label></div>
+    <div id="sPanelMagic"><div class="panel-title">매직 완드</div><div class="slider-row"><span class="slider-label">허용 범위</span><span class="slider-value" id="sTolVal">32</span></div><input type="range" id="sTolerance" min="0" max="255" value="32"><div style="height:8px"></div><label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim)"><input type="checkbox" id="sContiguous" checked style="accent-color:var(--accent)">인접 영역만</label><div style="height:10px"></div><div class="slider-row"><span class="slider-label">선택 확장</span><span class="slider-value" id="sGrowVal">2</span><span class="slider-label">px</span></div><input type="range" id="sGrowPx" min="0" max="20" value="2"><div style="height:6px"></div><button class="btn" id="sGrow" style="width:100%;margin-bottom:4px;font-size:11px">🔍 선택 확장</button><button class="btn" id="sFillHoles" style="width:100%;margin-bottom:4px;font-size:11px">🕳️ 구멍 채우기</button><div style="height:6px"></div><div class="slider-row"><span class="slider-label">크로마키 범위</span><span class="slider-value" id="sChromaVal">60</span></div><input type="range" id="sChromaTol" min="10" max="200" value="60"><div style="height:6px"></div><button class="btn" id="sChroma" style="width:100%;font-size:11px;background:rgba(0,177,64,.15);border-color:rgba(0,177,64,.4);color:#00e540">🟢 크로마키 배경 선택</button></div>
     <div id="sPanelBrush" style="display:none"><div class="panel-title">브러시</div><div class="slider-row"><span class="slider-label">크기</span><span class="slider-value" id="sBrushVal">30</span></div><input type="range" id="sBrushSize" min="2" max="200" value="30"><div style="height:8px"></div><div class="slider-row"><span class="slider-label">부드러움</span><span class="slider-value" id="sSoftVal">0</span></div><input type="range" id="sBrushSoft" min="0" max="100" value="0"></div>
     <div id="sPanelEraser" style="display:none"><div class="panel-title">지우개</div><div class="slider-row"><span class="slider-label">크기</span><span class="slider-value" id="sEraserVal">30</span></div><input type="range" id="sEraserSize" min="2" max="200" value="30"></div>
     <div id="sPanelLasso" style="display:none"><div class="panel-title">올가미</div><p style="font-size:12px;color:var(--text-dim)">탭→점 찍기, 더블탭→완료</p></div>
@@ -437,10 +437,10 @@ const S={img:null,zoom:1,panX:0,panY:0,tool:'magic',tolerance:32,contiguous:true
   pinchDist:0,pinchZoom:1,pinchPX:0,pinchPY:0,pinchMX:0,pinchMY:0,
   lastTap:0,settingsOpen:false,
   // Crop
-  crop:null, // {x,y,w,h}
-  cropDragging:null, // 'move'|'tl'|'tr'|'bl'|'br'|'t'|'b'|'l'|'r'|'new'
-  cropStart:null,
-  fileName:'bg_removed'};
+  crop:null,cropDragging:null,cropStart:null,
+  fileName:'bg_removed',
+  // Magic Wand enhancements
+  growPx:2, chromaTol:60};
 
 const $=id=>document.getElementById(id);
 const mainC=$('mainCanvas'),mainCtx=mainC.getContext('2d',{willReadFrequently:true});
@@ -542,9 +542,106 @@ syncPair(['dTolerance','sTolerance'],['dTolVal','sTolVal'],'tolerance');
 syncPair(['dBrushSize','sBrushSize'],['dBrushVal','sBrushVal'],'brushSize');
 syncPair(['dBrushSoft','sBrushSoft'],['dSoftVal','sSoftVal'],'brushSoft');
 syncPair(['dEraserSize','sEraserSize'],['dEraserVal','sEraserVal'],'eraserSize');
+syncPair(['dGrowPx','sGrowPx'],['dGrowVal','sGrowVal'],'growPx');
+syncPair(['dChromaTol','sChromaTol'],['dChromaVal','sChromaVal'],'chromaTol');
 ['dContiguous','sContiguous'].map($).filter(Boolean).forEach(cb=>{cb.onchange=e=>{
   S.contiguous=e.target.checked;['dContiguous','sContiguous'].map($).filter(Boolean).forEach(o=>o.checked=e.target.checked);
 }});
+
+// ── Selection Enhancement Functions ──
+
+// Grow: 선택 영역을 N px 만큼 팽창 (뭉개진 테두리까지 포함)
+function growSelection(){
+  if(!S.selection||!S.img)return;
+  const w=mainC.width,h=mainC.height,px=S.growPx;
+  if(px<=0)return;
+  const src=new Uint8Array(S.selection);
+  for(let y=0;y<h;y++){for(let x=0;x<w;x++){
+    if(src[y*w+x]>0)continue; // 이미 선택됨
+    // 주변 px 범위 안에 선택된 픽셀이 있는지 확인
+    let found=false;
+    for(let dy=-px;dy<=px&&!found;dy++){for(let dx=-px;dx<=px&&!found;dx++){
+      const nx=x+dx,ny=y+dy;
+      if(nx<0||ny<0||nx>=w||ny>=h)continue;
+      if(dx*dx+dy*dy>px*px)continue; // 원형 확장
+      if(src[ny*w+nx]>0)found=true;
+    }}
+    if(found)S.selection[y*w+x]=255;
+  }}
+  drawOverlay();updateSelectionStatus();updateButtons();
+  toast(`선택 영역 ${px}px 확장 완료 🔍`);
+}
+
+// Fill Holes: 선택 영역에 둘러싸인 미선택 "섬"을 채움
+function fillHoles(){
+  if(!S.selection||!S.img)return;
+  const w=mainC.width,h=mainC.height;
+  // 가장자리에서 시작하는 flood fill로 "외부" 영역을 찾음
+  const outside=new Uint8Array(w*h);
+  const stack=[];
+  // 모든 가장자리 미선택 픽셀을 시작점으로
+  for(let x=0;x<w;x++){
+    if(S.selection[x]===0&&!outside[x]){outside[x]=1;stack.push(x)}
+    const bi=(h-1)*w+x;
+    if(S.selection[bi]===0&&!outside[bi]){outside[bi]=1;stack.push(bi)}
+  }
+  for(let y=0;y<h;y++){
+    const li=y*w;
+    if(S.selection[li]===0&&!outside[li]){outside[li]=1;stack.push(li)}
+    const ri=y*w+w-1;
+    if(S.selection[ri]===0&&!outside[ri]){outside[ri]=1;stack.push(ri)}
+  }
+  while(stack.length){
+    const idx=stack.pop();const x=idx%w,y=(idx/w)|0;
+    for(const[nx,ny]of[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]){
+      if(nx<0||ny<0||nx>=w||ny>=h)continue;
+      const ni=ny*w+nx;
+      if(outside[ni]||S.selection[ni]>0)continue;
+      outside[ni]=1;stack.push(ni);
+    }
+  }
+  // outside=0 이고 selection=0 인 픽셀 = 구멍 → 채우기
+  let filled=0;
+  for(let i=0;i<w*h;i++){if(S.selection[i]===0&&!outside[i]){S.selection[i]=255;filled++}}
+  drawOverlay();updateSelectionStatus();updateButtons();
+  toast(filled>0?`${filled.toLocaleString()}px 구멍 채움 완료 🕳️`:'채울 구멍이 없어요');
+}
+
+// Chromakey: 녹색 계열 배경 전체를 한번에 선택
+function selectChromakey(){
+  if(!S.img)return;
+  const w=mainC.width,h=mainC.height;
+  const img=mainCtx.getImageData(0,0,w,h).data;
+  S.selection=new Uint8Array(w*h);
+  const tol=S.chromaTol;
+  // 크로마키 녹색 기준: R<tol, G>255-tol, B<tol (넓은 범위)
+  // 더 유연하게: 녹색 채도 기반 판별
+  for(let i=0;i<w*h;i++){
+    const r=img[i*4],g=img[i*4+1],b=img[i*4+2],a=img[i*4+3];
+    if(a===0)continue; // 이미 투명
+    // 녹색 우세도: G가 R과 B보다 얼마나 큰지
+    const greenDominance=g-Math.max(r,b);
+    // 밝기
+    const brightness=(r+g+b)/3;
+    // 녹색이 우세하고 밝기가 적당하면 크로마키
+    if(greenDominance>30 && g>80){
+      S.selection[i]=255;
+    } else {
+      // 보조 판별: 특정 크로마키 녹색(#00B140)과의 거리
+      const dr=r-0,dg=g-177,db=b-64;
+      const dist=Math.sqrt(dr*dr+dg*dg+db*db);
+      if(dist<=tol) S.selection[i]=255;
+    }
+  }
+  drawOverlay();updateSelectionStatus();updateButtons();
+  const cnt=S.selection.reduce((a,v)=>a+(v>0?1:0),0);
+  toast(cnt>0?`크로마키 ${cnt.toLocaleString()}px 선택됨 🟢`:'크로마키 배경을 찾지 못했어요');
+}
+
+// Bind buttons (desktop + mobile)
+[$('dGrow'),$('sGrow')].filter(Boolean).forEach(b=>{b.onclick=growSelection});
+[$('dFillHoles'),$('sFillHoles')].filter(Boolean).forEach(b=>{b.onclick=fillHoles});
+[$('dChroma'),$('sChroma')].filter(Boolean).forEach(b=>{b.onclick=selectChromakey});
 
 // Canvas coords
 function cc(cx,cy){const r=selC.getBoundingClientRect();return{x:Math.round((cx-r.left)/(r.width/mainC.width)),y:Math.round((cy-r.top)/(r.height/mainC.height))}}
